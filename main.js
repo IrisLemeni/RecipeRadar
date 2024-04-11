@@ -20,24 +20,26 @@ async function fetchAPI() {
 }
 
 function generateHTML(results) {
-  container.classList.remove("initial");
-  let generatedHTML = "";
-  results.map((result) => {
-    generatedHTML += `
-      <div class="item">
-        <img src="${result.recipe.image}" alt="img">
-        <div class="flex-container">
-          <h1 class="title">${result.recipe.label}</h1>
-          <a class="view-btn" target="_blank" href="${
-            result.recipe.url
-          }">View Recipe</a>
+    container.classList.remove("initial");
+    let generatedHTML = "";
+    results.forEach((result) => {
+      generatedHTML += `
+        <div class="item">
+          <img src="${result.recipe.image}" alt="img">
+          <div class="flex-container">
+            <h1 class="title">${result.recipe.label}</h1>
+            <a class="view-btn" target="_blank" href="${result.recipe.url}">View Recipe</a>
+          </div>
+          <p class="item-data">Calories: ${result.recipe.calories.toFixed(2)}</p>
+          <p class="item-data">Total time (min): ${result.recipe.totalTime !== 0 ? result.recipe.totalTime : 'Not specified'}</p>
         </div>
-        <p class="item-data">Calories: ${result.recipe.calories.toFixed(2)}</p>
-      </div>
-    `;
-  });
-  searchResultDiv.innerHTML = generatedHTML;
-}
+      `;
+    });
+    searchResultDiv.innerHTML = generatedHTML;
+    document.querySelector('.text-box').style.display = 'none';
+  }
+
+  
 
 var slideIndex = 0;
    showSlides();

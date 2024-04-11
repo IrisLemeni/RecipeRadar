@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -10,17 +11,37 @@ img {
   object-fit: cover;
 }
 html {
-  font-family: "Nunito";
+  font-family: "Montserrat";
   font-size: 12px;
 }
+
+header {
+  height: 100px; 
+  display: flex;
+  align-items: center;
+  background-color: white; 
+  }
+  header img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  header h1 {
+    margin: 0; 
+    padding-right: 9%;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(16, 75, 34);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+  
 body {
     background-color: rgba(119, 213, 96, 0.858);
 }
-header {
-    background-color: #61a76c; /* White background */
-    color: #000000; /* Black text */
-    padding: 3.5%; /* Add padding to create space around the content */
-  }
+
 .container {
   width: 100%;
   height: 90%;
@@ -36,12 +57,14 @@ header {
   margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 form {
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: 20px auto;
   background-color: rgb(223, 223, 223);
 }
+
 input {
   width: 90%;
   padding: 10px;
@@ -59,6 +82,24 @@ form ion-icon {
   color: rgb(75, 75, 75);
   display: inline-block;
 }
+.text-box {
+    width: 60%;
+    height: 80%;
+    margin: 0 auto; 
+    background-color: rgba(255, 255, 255, 0.498); 
+    padding: 20px; 
+    border: 5px solid rgb(16, 75, 34);
+    border-radius: 0;
+  }
+  
+  .text-box p {
+    font-size: 2rem;
+    padding: 2%;
+  }
+.text-box:hover {
+    background-color: rgba(143, 177, 116, 0.598);
+}  
+  
 .search-result {
   margin-top: 50px;
   width: 100%;
@@ -69,10 +110,15 @@ form ion-icon {
 .item {
   width: 100%;
   border-radius: 8px;
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(7, 27, 13);
   padding: 15px;
   overflow: hidden;
 }
+
+.item:hover {
+    transform: scale(1.05); 
+  }
+  
 .item img {
   width: 100%;
   height: 300px;
@@ -94,13 +140,16 @@ form ion-icon {
   text-align: center;
   width: 130px;
   padding: 10px 0;
-  background-color: #404041;
+  background-color: #344334;
   color: whitesmoke;
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 20px;
   border-radius: 4px;
   align-self: flex-start;
+}
+.view-btn:hover{
+    background-color: #2d2d2e;
 }
 .item-data {
   color: whitesmoke;
@@ -115,20 +164,33 @@ form ion-icon {
   font-size: 7rem;
 }
 .container.initial form {
-  max-width: 800px;
+  max-width: 700px;
+  margin-bottom: 6%;
+  height: 60px;
+
 }
 .container.initial form input {
   padding: 20px;
   font-size: 3rem;
+  height: 60px;
 }
+.container.initial form:hover {
+    background-color: rgba(143, 177, 116, 0.598);    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+
+.container.initial form input:hover{
+    background-color: rgba(143, 177, 116, 0.598);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+} 
 .slideshow-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* This will make the slideshow container occupy the whole visible page */
-    background-color: #f2f2f2; /* You can change the background color as needed */
-    z-index: -1; /* Ensures the slideshow is behind other content */
+    height: 100vh;
+    background-color: #f2f2f2; 
+    z-index: -1; 
  }
  .mySlides {
     display: none;
@@ -136,15 +198,15 @@ form ion-icon {
     height: 100%;
  }
  
- /* Fade animation for slideshow */
+
  .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 3s;
  }
  
  @keyframes fade {
     from {
-       opacity: .4
+       opacity: 0
     }
     to {
        opacity: 1
